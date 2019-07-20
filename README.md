@@ -8,7 +8,10 @@ python setup.py install
 ```
 
 ## Usage:
+
 #### Terminal:
+Example: ```tensorboard2seaborn --logdir=/experiments/logs --smooth=0.95```
+
 ```bash
 usage: tensorboard2seaborn [-h] [--logdir LOGDIR] [--smooth SMOOTH]
 optional arguments:
@@ -16,8 +19,6 @@ optional arguments:
   --logdir LOGDIR  Path to event files
   --smooth SMOOTH  window size for average smoothing
 ```
-
-Example: ```tensorboard2seaborn --logdir=/experiments/logs --smooth=0.95```
 
 #### Console: 
 ```python
