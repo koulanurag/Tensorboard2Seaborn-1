@@ -60,8 +60,8 @@ _Following structure is generated comprising of seaborn graphs_
 
 | Before | After |
 |:---:|:---:|
-|![test_accuracy](static/seaborn/test/accuracy.png)|![test_accuracy](static/seaborn/test/accuracy.png)|
-|![epoch_loss](static/seaborn/test/epoch_loss.png)|![epoch_loss](static/seaborn/test/epoch_loss.png)|
-|![batch_loss](static/seaborn/train/batch_loss.png)|![batch_loss](static/seaborn/train/batch_loss.png)|
-|![train_epoch_loss](static/seaborn/train/epoch_loss.png)|![train_epoch_loss](static/seaborn/train/epoch_loss.png)|
+|<img width=500/>![test_accuracy](static/original/test/accuracy.svg)|![test_accuracy](static/seaborn/test/accuracy.png)|
+|![epoch_loss](static/original/test/epoch_loss.svg)|![epoch_loss](static/seaborn/test/epoch_loss.png)|
+|![batch_loss](static/original/train/batch_loss.svg)|![batch_loss](static/seaborn/train/batch_loss.png)|
+|![train_epoch_loss](static/original/train/epoch_loss.svg)|![train_epoch_loss](static/seaborn/train/epoch_loss.png)|
 

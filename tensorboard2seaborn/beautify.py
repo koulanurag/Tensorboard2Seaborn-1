@@ -45,7 +45,7 @@ def plot(logdir: str, savedir: str, smoothing: float = 0.6, ):
             for tag in scalar_list:
                 x = [s.step for s in acc.Scalars(tag)]
                 y = [s.value for s in acc.Scalars(tag)]
-                data = {'x': x, 'y': y, 'legend': ''}
+                data = {'x': x, 'y': y, 'legend': root.split(logdir)[1][1:] if root != logdir else None}
                 if tag not in scalars_info:
                     scalars_info[tag] = [data]
                 else:
@@ -69,11 +69,11 @@ def plot(logdir: str, savedir: str, smoothing: float = 0.6, ):
             x, y = data['x'], data['y']
             y_smooth = smooth(y, weight=smoothing)
             current_color = color_list.pop()
-            _plt = sns.lineplot(x, y, label='label', color=colors.to_rgba(current_color,alpha=0.4))
-            _plt = sns.lineplot(x, y_smooth, label='label', color=current_color)
+            _plt = sns.lineplot(x, y, color=colors.to_rgba(current_color, alpha=0.4))
+            _plt = sns.lineplot(x, y_smooth, label=data['legend'], color=current_color)
 
         _plt.set(xlabel='x', ylabel='y')
-        _plt.set_title('title')
+        _plt.set_title(_name.capitalize())
 
         plt.savefig(os.path.join(_path, _name + '.png'))
         plt.clf()
