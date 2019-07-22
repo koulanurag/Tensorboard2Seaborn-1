@@ -26,3 +26,42 @@ import tensorboard2seaborn
 
 tensorboard2seaborn.plot(logdir='/experiments/logs')
 ```
+
+***
+
+_We expect following structure of the tensflow log events._
+```bash
+└── results
+    ├── exp2
+    │   └── events.out.tfevents....0
+    ├── exp1
+    │   └── events.out.tfevents....0
+    ├──  ....
+```
+
+_Following structure is generated comprising of seaborn graphs_
+
+```bash
+└── results
+    └── seaborn
+        ├── group1
+        │   ├── plot1.png
+        │   └── plot2.png
+        │   └──  ...
+        ├── group2
+        │   ├── plot1.png
+        │   └── plot2.png
+        │   └──  ...
+```
+
+***
+
+## Demo
+
+| Before | After |
+|:---:|:---:|
+|![test_accuracy](static/seaborn/test/accuracy.png)|![test_accuracy](static/seaborn/test/accuracy.png)|
+|![epoch_loss](static/seaborn/test/epoch_loss.png)|![epoch_loss](static/seaborn/test/epoch_loss.png)|
+|![batch_loss](static/seaborn/train/batch_loss.png)|![batch_loss](static/seaborn/train/batch_loss.png)|
+|![train_epoch_loss](static/seaborn/train/epoch_loss.png)|![train_epoch_loss](static/seaborn/train/epoch_loss.png)|
+
