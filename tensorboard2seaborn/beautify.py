@@ -18,7 +18,7 @@ def smooth(scalars, weight=0.6):
     return smoothed
 
 
-def plot(logdir: str, savedir: str, smoothing: float = 0.6, ):
+def plot(logdir: str, savedir: str, smoothing: float = 0.6, no_title=False, no_legend=False, no_axis_labels=False):
     """ re-draw the tf summary events plots  using seaborn
 
     :param logdir: Path to the directory having event logs
@@ -70,10 +70,13 @@ def plot(logdir: str, savedir: str, smoothing: float = 0.6, ):
             y_smooth = smooth(y, weight=smoothing)
             current_color = color_list.pop()
             _plt = sns.lineplot(x, y, color=colors.to_rgba(current_color, alpha=0.4))
+            _legend = data['legend'] if not no_legend else None
             _plt = sns.lineplot(x, y_smooth, label=data['legend'], color=current_color)
 
-        _plt.set(xlabel='x', ylabel='y')
-        _plt.set_title(_name.capitalize())
+        if not no_axis_labels:
+            _plt.set(xlabel='x', ylabel='y')
+        if not no_title:
+            _plt.set_title(_name.capitalize())
 
         plt.savefig(os.path.join(_path, _name + '.png'))
         plt.clf()
